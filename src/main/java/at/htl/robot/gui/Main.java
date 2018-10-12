@@ -18,13 +18,15 @@ public class Main extends PApplet {
     }
 
     public void settings() {
+
         size(800, 800);
+
     }
 
     public void setup() {
+
         background(209); //https://processing.org/tutorials/color/
         robot = new Robot();
-
 
     }
 
@@ -32,27 +34,28 @@ public class Main extends PApplet {
      * Diese Methode wird iterativ durchlaufen (wie loop() beim Arduino)
      */
     public void draw() {
-        //feld
+
+        background(209);
+
+        ellipse(leftMargin + boxLength/2 + robot.getX() ,
+                upperMargin + boxLength/2 + robot.getY() ,
+                (int) (boxLength * 0.8),
+                (int) (boxLength * 0.8));
+
         for (int i = 0; i < 11; i++) {
-            line(    leftMargin,
+            line(leftMargin,
                     upperMargin + i * boxLength,
                     leftMargin + 10 * boxLength,
                     upperMargin + i * boxLength);
 
-            line(   leftMargin + i * boxLength,
+            line(leftMargin + i * boxLength,
                     upperMargin,
                     leftMargin + i * boxLength,
                     upperMargin + 10 * boxLength);
-
-            ellipse(leftMargin + boxLength/2 + robot.getX() ,
-                    upperMargin + boxLength/2 + robot.getY() ,
-                    (int) (boxLength * 0.8),
-                    (int) (boxLength * 0.8));
         }
 
 
 
-        //roboter
 
     }
 
@@ -64,8 +67,6 @@ public class Main extends PApplet {
      * @param robot Objekt des zu zeichnenden Roboters
      */
     public void drawRobot(Robot robot) {
-
-
     }
 
     /**
@@ -89,9 +90,9 @@ public class Main extends PApplet {
 
     }
 
-//    public void keyTyped() {
-//        println("typed " + key + " " + keyCode);
-//    }
+//   public void keyTyped() {
+// println("typed " + key + " " + keyCode);
+//   }
 //
 //    public void keyReleased() {
 //        println("released " + key + " " + keyCode);

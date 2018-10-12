@@ -4,7 +4,7 @@ package at.htl.robot.model;
 
         private int x;
         private int y;
-        private Direction direction;
+        private Direction direction = Direction.SOUTH;
 
         public int getX() {
             return this.x;
@@ -18,7 +18,7 @@ package at.htl.robot.model;
             return this.y;
         }
 
-        public void  setY(int y) {
+        public void  setY(int y)        {
             this.y = y;
         }
 
@@ -32,16 +32,16 @@ package at.htl.robot.model;
 
         public void stepForward(){
             if (this.direction == Direction.SOUTH){
-                y++;
+                y = y + 50;
             }
             if (this.direction == Direction.EAST){
-                x++;
+                x = x + 50;
             }
             if (this.direction == Direction.NORTH){
-                y--;
+                y = y - 50;
             }
             if (this.direction == Direction.WEST){
-                x--;
+                x = x - 50;
             }
 
         }
